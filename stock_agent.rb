@@ -1,6 +1,7 @@
 #!/usr/bin/ruby
 
 require 'lib/finance/yahoo_finance_interface'
+require 'lib/core/csv_helper'
 
 p "Stock Agent"
 
@@ -10,6 +11,6 @@ prices = yfi.fetch_historical_prices( "CRI.MC",
                                       Date.civil(2007, 10, 10), 
                                       Date.today)
 
-p prices
-p prices.class.name
+
+data = store_csv( prices, { :header => true})
 

@@ -2,9 +2,8 @@ require 'net/http'
 require 'uri'
 require 'date'
 
+# YahooFinanceInterface is a class to interface with the Yahoo Financial web site
 class YahooFinanceInterface
-
-
 
     def initialize
         @host = "ichart.finance.yahoo.com"
