@@ -12,7 +12,7 @@ def store_csv( csv_data, opts={})
 
     csv_data.each_with_index do |line, i_line|
 
-        values   = line.split( options[:field_separator] )
+        values   = line.strip.split( options[:field_separator] )
         n_values = values.size
 
         # Process header if first row is the header
