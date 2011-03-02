@@ -10,7 +10,6 @@ def store_csv( csv_data, header=False, field_separator=','):
 
     for line in lines:
         values = line.split( field_separator )
-        print values
         n_values = len( values )
 
         # build header if necessary

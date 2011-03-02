@@ -11,3 +11,12 @@ def convert_to_float_list( in_list ):
         out_list.append( value )
 
     return out_list
+
+
+def reverse( in_list):
+
+    out_list = in_list 
+
+    out_list.reverse()
+
+    return out_list
