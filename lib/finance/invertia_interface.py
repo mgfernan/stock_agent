@@ -5,6 +5,25 @@ import lxml.etree as le
 HOST = "www.invertia.com"
 PORT = 80
 
+def parse_float( string, thousand='.', decimal=',' ):
+    """ Parses a float string with a given thousands and decimal separator """
+
+    try:
+        f_string = string.replace( thousand,"").replace(decimal,".")
+        return float(f_string)
+    except Exception: return None
+
+def parse_epoch_string_list( array ):
+    """ """
+
+    p_array = []
+
+    for epoch in array:
+        p_array.append( datetime.datetime.strptime( epoch, "%d/%m/%Y") )
+
+    return p_array
+
+
 def fetch_results( ticker ):
     """ Fetch results from the invertia page """
 
@@ -44,3 +63,4 @@ def fetch_results( ticker ):
     print data[7::9]
     print data[8::9]
 
+    return data
